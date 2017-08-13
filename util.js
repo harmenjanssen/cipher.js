@@ -24,10 +24,17 @@ const shiftLeft = key => {
   return toAlphabetKey([...values.slice(1), values[0]]);
 };
 
+/**
+ * Flip an object (creates object where values become keys, and keys become values)
+ * (will fail if values are invalid keys)
+ */
+const flipObj = o => toObj(Object.values(o), Object.keys(o));
+
 module.exports = {
   alphabet,
   equals,
   toObj,
+  flipObj,
   isVowel,
   toAlphabetKey,
   shiftRight,
